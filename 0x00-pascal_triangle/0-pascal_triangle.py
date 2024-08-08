@@ -50,23 +50,23 @@ def pascal_triangle(n):
     return triangle
 
 
-def display_triangle(triangle):
+def print_triangle(triangle):
     """
     Print the triangle
 
     Tests:
-        >>> display_triangle(pascal_triangle(5))
+        >>> print_triangle(pascal_triangle(5))
         [1]
         [1,1]
         [1,2,1]
         [1,3,3,1]
         [1,4,6,4,1]
 
-        >>> display_triangle(pascal_triangle(0))  # nothing is printed for this
-        >>> display_triangle(pascal_triangle(2))
+        >>> print_triangle(pascal_triangle(0))  # nothing is printed for this
+        >>> print_triangle(pascal_triangle(2))
         [1]
         [1,1]
-        >>> display_triangle(pascal_triangle(1))
+        >>> print_triangle(pascal_triangle(1))
         [1]
     """
     for row in triangle:
@@ -74,4 +74,4 @@ def display_triangle(triangle):
 
 
 if __name__ == "__main__":
-    display_triangle(pascal_triangle(5))
+    print_triangle(pascal_triangle(5))

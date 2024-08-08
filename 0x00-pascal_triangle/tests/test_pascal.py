@@ -12,7 +12,7 @@ import pytest # type: ignore
 sys.path.append(os.path.abspath(os.path.join("0x00-pascal_triangle")))
 
 pascal_triangle = __import__("0-pascal_triangle").pascal_triangle
-display_triangle = __import__("0-pascal_triangle").display_triangle
+print_triangle = __import__("0-pascal_triangle").print_triangle
 
 
 @pytest.mark.parametrize(
@@ -114,14 +114,14 @@ def test_pascal_triangle_bigger_numbers(n, expected):
         "single_row",
     ],
 )
-def test_display_triangle(triangle, expected_output):
+def test_print_triangle(triangle, expected_output):
     """
-    Test function for the display_triangle function.
+    Test function for the print_triangle function.
     """
     # Act
     f = StringIO()
     with redirect_stdout(f):
-        display_triangle(triangle)
+        print_triangle(triangle)
     output = f.getvalue()
 
     # Assert
