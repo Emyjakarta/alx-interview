@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 
-"""This module tests the Pascal's Triangle function."""
+"""Module that tests the Pascal's Triangle function."""
 
 import os
 import sys
 from contextlib import redirect_stdout
 from io import StringIO
 
-import pytest
+import pytest # type: ignore
 
 sys.path.append(os.path.abspath(os.path.join("0x00-pascal_triangle")))
 
 pascal_triangle = __import__("0-pascal_triangle").pascal_triangle
-print_triangle = __import__("0-pascal_triangle").print_triangle
+display_triangle = __import__("0-pascal_triangle").display_triangle
 
 
 @pytest.mark.parametrize(
@@ -114,14 +114,14 @@ def test_pascal_triangle_bigger_numbers(n, expected):
         "single_row",
     ],
 )
-def test_print_triangle(triangle, expected_output):
+def test_display_triangle(triangle, expected_output):
     """
-    Test function for the print_triangle function.
+    Test function for the display_triangle function.
     """
     # Act
     f = StringIO()
     with redirect_stdout(f):
-        print_triangle(triangle)
+        display_triangle(triangle)
     output = f.getvalue()
 
     # Assert
